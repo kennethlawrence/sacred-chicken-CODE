@@ -1,0 +1,15 @@
+{
+  "name": "citylove-server",
+  "description": "Get city love metrics from raw data",
+  "repository": "git@github.com:kennethlawrence/sacred-chicken-CODE.git",
+  "state": "alpha",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-jshint": "^0.8.0",
+    "grunt-contrib-watch": "^0.5.3",
+    "sqlite3": "^2.2.0",
+    "q": "^1.0.0"
+  }
+}
