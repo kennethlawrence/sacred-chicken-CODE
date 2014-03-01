@@ -1,4 +1,5 @@
-build/*
-.vagrant/*
+build/
+node_modules/
+.vagrant/
 *.swp
 
