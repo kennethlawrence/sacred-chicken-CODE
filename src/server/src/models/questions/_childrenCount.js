@@ -1,10 +1,13 @@
-"childrenCount" :
+"numberOfChildren" :
   {
     "title"   : "Family Size",
     "fulltext": "Everythings has a right size, even families. Do you have or do you want some children of your own?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "childrenCount",
+    "category": "relationships",
+    "indicator": "children",
+    "slug"    : "numberofchildren",
+    "order"   : 4,
     "answers" : [
       {
         "option" : "0",

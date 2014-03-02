@@ -31,6 +31,10 @@ angular.module('cityLove.controllers', ['cityLove.services'])
 
     $scope.nextQuestion = function() {
       if($scope.currentQuestionNumber > 0 && $scope.currentQuestionNumber <= $scope.totalQuestions && $scope.ready) {
+        if($scope.currentAnswer.relative){
+         $scope.currentAnswer.option += profileService.getCurrentProfile().profile[$scope.currentAnswer.relative]
+        }
+
         profileService.updateProfile(
           $scope.question.category,
           $scope.question.indicator,

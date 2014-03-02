@@ -1,10 +1,13 @@
-"homeOwning": 
+"homeOwner": 
 {
     "title"   : "Home Owning Status",
     "fulltext": "What's your thoughts on owning a house?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "home-owning",
+    "slug"    : "homeowner",
+    "category": "financial",
+    "indicator": "homeOwner",
+    "order"   : 10,
     "answers":  [
       {
         "option" : "own",

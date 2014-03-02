@@ -4,7 +4,10 @@
     "fulltext": "Do you identify yourself with any specific religion?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "religion",
+    "slug"    : "specificreligion",
+    "category": "profile",
+    "indicator": "religion",
+    "order"   : 6,
     "answers" : [
       {
         "option": "buddhist",

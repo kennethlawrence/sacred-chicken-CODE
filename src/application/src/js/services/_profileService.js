@@ -39,9 +39,13 @@
         updateProfile :  function(category, indicator, value) {
           current[category][indicator] = value;
         },
+        getCurrentProfile : function() {
+          return current;
+        },
         reset : function(){
           clearData();
         }
+
     }
   }
 ])

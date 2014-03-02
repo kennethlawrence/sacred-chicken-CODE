@@ -4,7 +4,10 @@
     "fulltext": "There's a lot a ways to make a living, and some people prefer to go it alone. Do you ever dream of starting up a business on your own?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "employment-type",
+    "slug"    : "employmentclass",
+    "category": "financial",
+    "indicator": "class",
+    "order"   : 13,
     "answers": [
       {
         "option" : "employee",

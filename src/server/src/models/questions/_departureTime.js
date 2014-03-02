@@ -4,7 +4,10 @@
     "fulltext": "What's the best time to get up and at it?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "workDeparture",
+    "slug"    : "workdeparture",
+    "category" : "lifestyle",
+    "indicator": "departure",
+    "order"   : 14,
     "answers" : [
       {
         "option": "5am",

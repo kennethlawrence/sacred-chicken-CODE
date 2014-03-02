@@ -4,7 +4,10 @@
     "fulltext": "If you could go to school for just one thing, what area would it be in?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "educationFocus",
+    "slug"    : "educationfocus",
+    "category": "education",
+    "indicator": "focus",
+    "order"   : 9,
     "answers" : [
       {
         "option": "none",

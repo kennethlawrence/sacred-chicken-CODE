@@ -1,10 +1,13 @@
-"ageAffinity" :  
+"profileAge" :  
   {
     "title"   : "Age",
     "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark",
     "comment" : "",
-    "type"    : "range",
-    "slug"    : "ageAffinity",
+    "type"    : "number",
+    "slug"    : "profileage",
+    "category": "profile",
+    "indicator": "age",
+    "order"   : 2,
     "range"   : {
       "min":  18,
       "max":  85

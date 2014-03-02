@@ -1,1 +1,1 @@
-var allQuestions = { 
+var allQuestions = {

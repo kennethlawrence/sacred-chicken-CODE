@@ -4,7 +4,10 @@
     "fulltext": "I see, well that leads us straight into our very next question.  You wouldn't happen to be  married would you?  Common law or otherwise?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "marrage-status",
+    "slug"    : "maritalstatus",
+    "category": "relationships",
+    "indicator": "status",
+    "order"   :  3,
     "answers" : [
       {
         "option" : "married",

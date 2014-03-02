@@ -3,7 +3,11 @@
     "title" : "Desired Education Level",
     "fulltext": "What's your ideal education level.  Are you a basement philosopher, or would you rather take your lessons in the school of hard knocks?",
     "comment": "",
-    "slug": "educationLevel",
+    "slug": "educationlevel",
+    "category": "education",
+    "indicator": "level",
+    "type" : "list",
+    "order" : 7,
     "answers" : [
       {
         "option"  : "none",

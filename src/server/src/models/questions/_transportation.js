@@ -5,6 +5,9 @@
     "comment" : "",
     "type"    : "list",
     "slug"    : "transportation",
+    "category": "lifestyle",
+    "indicator": "transportation",
+    "order"   : 15,
     "answers" : [
       {
         "option" : "driver",

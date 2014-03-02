@@ -1,12 +1,15 @@
-var allQuestions = { 
+var allQuestions = {
 
-"ageAffinity" :  
+"profileAge" :  
   {
     "title"   : "Age",
     "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark",
     "comment" : "",
-    "type"    : "range",
-    "slug"    : "ageAffinity",
+    "type"    : "number",
+    "slug"    : "profileage",
+    "category": "profile",
+    "indicator": "age",
+    "order"   : 2,
     "range"   : {
       "min":  18,
       "max":  85
@@ -31,35 +34,48 @@ var allQuestions = {
     ]
   },
 
-"ageSimilarity" : 
+"ageRelation" : 
   {
     "title"   : "Age",
-    "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark",
+    "fulltext": "A great place to live means having a great group of friends, but we don't all always act our age. In what age range would your best of friends fit in?",
     "comment" : "",
-    "type"    : "range",
-    "slug"    : "ageSimilarity",
-    "range"   : {
-      "min":  18,
-      "max":  85
-    },
-    "steps": [
+    "type"    : "list",
+    "slug"    : "agerelation",
+    "category": "relationships",
+    "indicator": "age",
+    "order"   : 5,
+    "answers": [
       {
-        "top": 25,
-        "text": "A young gun."
+        "option": -10,
+        "relative": 'age',
+        "text" : "Much younger then I am",
+        "caption": "My friends a quite a bit younger than me."
       },
       {
-        "top": 45,
-        "text"   : "Old enough to have all this figured out, young enough to pretend you don't"
+        "option": -5,
+        "relative": 'age',
+        "text" : "Slightly younger then I am",
+        "caption": "My friends a bit younger than me, but by usually by less than 5 years."
       },
       {
-        "top": 65,
-        "text"   : "Top of the heap.  Master of everything...or at least everything you want to."
+        "option": 0,
+        "relative": 'age',
+        "text": "My own age",
+        "caption": "When I head out, its with a group that all my own age."
       },
       {
-        "top": 85,
-        "text"   : "The golden years, maybe now everyone will give you enough time to actually get some stuff done."
+        "option": 5,
+        "relative": 'age',
+        "text" : "Slightly older then I am",
+        "caption": "In my group, I'm usually just a bit younger then everyone else."
+      },
+      {
+        "option": 10,
+        "relative": 'age',
+        "text" : "Much older then I am",
+        "caption": "I'm the baby face of this group."
       }
-    ]
+   ]
   },
 
 "artsEntertainment" : 
@@ -67,23 +83,44 @@ var allQuestions = {
     "title"   : "Culture Scene",
     "fulltext": "How big of an art, entertainment, and sport scene does a city need to fill what are you looking for?",
     "comment" : "",
-    "type"    : "range",
-    "slug"    : "artsEntertainment",
+    "category": "education",
+    "indicator": "social",
+    "order"   : 8,
+    "type"    : "list",
+    "slug"    : "artsentertainment",
     "range"   : {
       "min":  25,
       "max":  113490
     },
-    "steps": [
+    "answers": [
+      {
+        "option": 0.5,
+        "text": "Not Big",
+        "caption": "A night at the movies, or at home with a good book is all I really need. I keep active on my own."
+      },
+      {
+        "option": 1,
+        "text": "Moderate",
+        "caption": "I like to get out once and a while, take in some theater, or sports, but not all the time."
+      },
+      {
+        "option": 1.5,
+        "text": "Vast",
+        "caption": "I'm never home. Theater, sports, dance, art galleries, everything keeps me going." 
+      },
     ]
   },
 
-"childrenCount" :
+"numberOfChildren" :
   {
     "title"   : "Family Size",
     "fulltext": "Everythings has a right size, even families. Do you have or do you want some children of your own?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "childrenCount",
+    "category": "relationships",
+    "indicator": "children",
+    "slug"    : "numberofchildren",
+    "order"   : 4,
     "answers" : [
       {
         "option" : "0",
@@ -114,7 +151,10 @@ var allQuestions = {
     "fulltext": "What's the best time to get up and at it?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "workDeparture",
+    "slug"    : "workdeparture",
+    "category" : "lifestyle",
+    "indicator": "departure",
+    "order"   : 14,
     "answers" : [
       {
         "option": "5am",
@@ -140,7 +180,10 @@ var allQuestions = {
     "fulltext": "If you could go to school for just one thing, what area would it be in?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "educationFocus",
+    "slug"    : "educationfocus",
+    "category": "education",
+    "indicator": "focus",
+    "order"   : 9,
     "answers" : [
       {
         "option": "none",
@@ -215,7 +258,11 @@ var allQuestions = {
     "title" : "Desired Education Level",
     "fulltext": "What's your ideal education level.  Are you a basement philosopher, or would you rather take your lessons in the school of hard knocks?",
     "comment": "",
-    "slug": "educationLevel",
+    "slug": "educationlevel",
+    "category": "education",
+    "indicator": "level",
+    "type" : "list",
+    "order" : 7,
     "answers" : [
       {
         "option"  : "none",
@@ -256,7 +303,10 @@ var allQuestions = {
     "fulltext": "There's a lot a ways to make a living, and some people prefer to go it alone. Do you ever dream of starting up a business on your own?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "employment-type",
+    "slug"    : "employmentclass",
+    "category": "financial",
+    "indicator": "class",
+    "order"   : 13,
     "answers": [
       {
         "option" : "employee",
@@ -277,7 +327,10 @@ var allQuestions = {
     "fulltext": "Let's get things rolling shall we. First things first...Do you identify yourself as Male or Female?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "gender",
+    "slug"    : "",
+    "category": "profile",
+    "indicator": "gender",
+    "order"   : 1,
     "answers" : [
       {
         "option" : "male",
@@ -292,13 +345,16 @@ var allQuestions = {
     ]
   },
 
-"homeOwning": 
+"homeOwner": 
 {
     "title"   : "Home Owning Status",
     "fulltext": "What's your thoughts on owning a house?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "home-owning",
+    "slug"    : "homeowner",
+    "category": "financial",
+    "indicator": "homeOwner",
+    "order"   : 10,
     "answers":  [
       {
         "option" : "own",
@@ -318,28 +374,57 @@ var allQuestions = {
     "title"   : "Housing Cost",
     "fulltext": "Looking for a mansion, a town house, or maybe a modest bungalow.  Maybe renting an awesome little bachelor apartment is more your desire.  Either way housing can get expensive in some cities, just how much do you feel comfortable spending on your little piece of heaven every month?",
     "comment" : "",
-    "type"    : "range",
+    "type"    : "list",
     "slug"    : "housingcost",
-    "range"   : {
-      "min":  615,
-      "max":  2408
-    },
-    "steps": [
+    "category": "financial",
+    "indicator": "livingExpenses",
+    "order"   : 12,
+    "answers": [
+      {
+        "option": "30down",
+        "text": "Up to 30% of my income",
+        "caption": "I prefer to keep my living expenses minimal to moderate, staying within budget is important to me."
+      },
+      {
+        "option": "30up",
+        "text": "More then 30% of my income",
+        "caption": "My living space is important to me, other parts of my life can be squeezed to keep up with my housing costs."
+      }
     ]
   },
 
 "incomeLevel" : 
 {
     "title"   : "Income level",
-    "fulltext": "Money doesn't buy much happiness, but it's pretty good at paying the rent. Some people chase the biggest paycheck, and some just want enough that they don't have to worry.  How much do you think you could manage to earn in a year?",
+    "fulltext": "Money doesn't buy much happiness, but it's pretty good at paying the bills. Due to the fact that wages differ depending on where you live, its hard to know how much you can earn in a different city.  If you can, make a guess of how much you think you could manage to earn in a year if you could live anywhere. Otherwise, feel free to move on the the next question.",
     "comment" : "",
-    "type"    : "range",
-    "slug"    : "housingcost",
+    "type"    : "list",
+    "slug"    : "incomelevel",
+    "category": "financial",
+    "indicator": "level",
+    "order"   : 11,
     "range"   : {
       "min":  22700,
       "max":  87878
     },
-    "steps": [
+    "answers": [
+      {
+        "option": 25000,
+        "text" : "Somewhere around $25000",
+        "caption" : "Anywhere in the ballpark of $25000."
+      },
+      {
+        "option": 50000,
+        "text" : "I think about $50000",
+        "caption" : "$50000 seems like a reasonable estimate."
+      },
+      {
+        "option": 80000,
+        "text" : "$80000 or up.",
+        "caption" : "$80000 or up seem within reach."
+      },
+ 
+ 
     ]
   },
 
@@ -349,7 +434,10 @@ var allQuestions = {
     "fulltext": "I see, well that leads us straight into our very next question.  You wouldn't happen to be  married would you?  Common law or otherwise?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "marrage-status",
+    "slug"    : "maritalstatus",
+    "category": "relationships",
+    "indicator": "status",
+    "order"   :  3,
     "answers" : [
       {
         "option" : "married",
@@ -369,32 +457,40 @@ var allQuestions = {
     "title"   : "Some Personal Space",
     "fulltext": "Canada has some wonderful wide open spaces, and some tightly packed cities.  Whats the right mix for you?",
     "comment" : "",
-    "type"    : "range",
-    "slug"    : "populationDensity",
+    "type"    : "list",
+    "slug"    : "populationdensity",
+    "category": "lifestyle",
+    "indicator": "density",
+    "order"   : 16,
     "range"   : {
       "min":  1,
       "max":  1275  
     },
-    "steps": [
+    "answers": [
       {
-        "top": 50,
-        "text": "I like my fresh air open fields and plenty of nature."
+        "option": 50,
+        "text": "Open spaces for sure",
+        "caption": "I like my fresh air open fields and plenty of nature."
       },
       {
-        "top": 150,
-        "text"   : "A good yard to work in, and an open park satisfy my needs"
+        "option": 150,
+        "text": "Small Neighbourhoods",
+        "caption"   : "A good yard to work in, and an open park satisfy my needs"
       },
       {
-        "top": 300,
-        "text"   : "I like having my neighbours close by, and a little bit of motion on my street."
+        "option": 300,
+        "text": "Busy Cities",
+        "caption"   : "I like having my neighbours close by, and lots of motion on keeps things lively."
       },
       {
-        "top": 600,
-        "text"   : "Smaller houses, and apartements suit my needs, and the conviences of the city come with having some people around."
+        "option": 600,
+        "text": "Major Centres",
+        "caption"   : "Small houses, and apartments suit my needs, and the conviences of the city come with having some people around."
       },
       {
-        "top": 800,
-        "text" : "City life, isn't city life without the human element.  I like seeing people everywhere I go, and I everything is close by."
+        "option": 800,
+        "text": "Bright Lights and Huge Cities",
+        "caption" : "City life, isn't city life without the human element.  I like seeing people everywhere I go, and I everything is close by."
       }
     ]
   },
@@ -405,7 +501,10 @@ var allQuestions = {
     "fulltext": "Do you identify yourself with any specific religion?",
     "comment" : "",
     "type"    : "list",
-    "slug"    : "religion",
+    "slug"    : "specificreligion",
+    "category": "profile",
+    "indicator": "religion",
+    "order"   : 6,
     "answers" : [
       {
         "option": "buddhist",
@@ -462,6 +561,9 @@ var allQuestions = {
     "comment" : "",
     "type"    : "list",
     "slug"    : "transportation",
+    "category": "lifestyle",
+    "indicator": "transportation",
+    "order"   : 15,
     "answers" : [
       {
         "option" : "driver",
@@ -497,4 +599,12 @@ var allQuestions = {
   },
 
 };
-module.exports.allQuestions = allQuestions;;
+
+var questionArray = [];
+for(var question in allQuestions)
+  questionArray.push([question, allQuestions[question]]);
+
+questionArray.sort(function(a,b) {
+  return a[1].order - b[1].order
+});
+module.exports.questions = questionArray;

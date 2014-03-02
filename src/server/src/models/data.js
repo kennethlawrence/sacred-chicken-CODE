@@ -154,13 +154,15 @@ var route = function(request, response){
     //console.log("metric", request.query.target, request.query.bias);
     metrics[metric](request.query.target, request.query.bias)
       .then(function(data) {
+        response.setHeader('Access-Control-Allow-Origin', 'localhost:9000');
+        response.setHeader('Access-Control-Allow-Methods', 'GET');
         response.json(data);
       });
   }
 }
 
 var metrics = {
-    ageSimilarity : function(target, bias) {
+    agerelation: function(target, bias) {
       var minAge = 5 * Math.floor(target/5),
           maxAge = minAge + 4,
           stat;
@@ -173,7 +175,7 @@ var metrics = {
       return baseMetrics.similarity(census, "Age characteristics", "Total population by age groups", stat, bias);
     },
 
-    maritalStatusSimilarity : function(target, sex) {
+    maritalstatus : function(target, sex) {
       var options = {
         'single' : '   Not married and not living with a common-law partner',
         'married' : '   Married or living with a common-law partner'
@@ -181,7 +183,7 @@ var metrics = {
       return baseMetrics.similarity(census, "Marital status", "Total population 15 years and over by marital status", options[target], sex);
     },
 
-    specificReligionSimilarity : function(target, bias) {
+    specificreligion : function(target, bias) {
       target = target.toLowerCase();
 
       var options = {
@@ -198,7 +200,7 @@ var metrics = {
       return baseMetrics.similarity(nhs, "Religion", "Total population in private households by religion", options[target], bias);
     },
 
-    educationLevelSimilarity : function(target, bias) {
+    educationlevel : function(target, bias) {
       target = target.toLowerCase();
       var options = {
         'none'           : '  No certificate, diploma or degree',
@@ -211,7 +213,7 @@ var metrics = {
       return baseMetrics.similarity(nhs, "Education", "Total population aged 25 to 64 years by highest certificate, diploma or degree", options[target], bias);
     },
 
-    educationFocusSimilarity : function(target, bias) {
+    educationfocus : function(target, bias) {
       target = target.toLowerCase();
       var options = {
         'none'         : '  No postsecondary certificate, diploma or degree',
@@ -231,7 +233,7 @@ var metrics = {
       return baseMetrics.similarity(nhs, "Education", "Total population aged 25 to 64 years by highest certificate, diploma or degree", options[target], bias);
     },
 
-    employmentClassSimilarity : function(target, bias) {
+    employmentclass : function(target, bias) {
       target = target.toLowerCase();
       var options = {
         'employee'     : '    Employee',
@@ -240,7 +242,7 @@ var metrics = {
       return baseMetrics.similarity(nhs, "Class of worker", "  All classes of worker", options[target], bias);
     },
 
-    transportationSimilarity : function(target, bias) {
+    transportation : function(target, bias) {
       target = target.toLowerCase();
       var options = {
         'driver'    : '  Car, truck or van - as a driver',
@@ -255,7 +257,7 @@ var metrics = {
           options[target], bias);
     },
 
-    workDepartureSimilarity : function(target, bias) {
+    workdeparture : function(target, bias) {
       target = target.toLowerCase();
       var options = {
         '5am' : '  Between 5 and 6:59 a.m.',
@@ -267,7 +269,7 @@ var metrics = {
           options[target], bias);
     },
 
-    homeOwningSimilarity : function(target, bias) {
+    homeowner : function(target, bias) {
       target = target.toLowerCase();
       var options = {
         'own' : '  Owner',
@@ -278,7 +280,7 @@ var metrics = {
           options[target], bias);
     },
 
-    childrenCountSimilarity : function(target, bias) {
+    numberofchildren : function(target, bias) {
       target = target.toLowerCase();
       var options = {
         '0' : '   Size of census family: 2 persons',
@@ -291,36 +293,55 @@ var metrics = {
           options[target], bias);
     },
 
-    artsAndEntertainmentAffinity: function(target) {
+    artsentertainment: function(weight) {
       //This Affinity makes the assumption that cities with high levels of the
       //population employed in arts, culture, recreation, and sport indicate
       //a thriving arts and entertainment industry in the city.
       // MAX VALUE  : 113490;
       // MIN_VALUE  : 25;
-      return baseMetrics.affinity(nhs, "Occupation", "    5 Occupations in art, culture, recreation and sport", target);
+      //return baseMetrics.affinity(nhs, "Occupation", "    5 Occupations in art, culture, recreation and sport", target);
+      var finished = Q.defer(),
+          query = baseMetrics.similarity(nhs, "Occupation", "  All occupations",
+            "    5 Occupations in art, culture, recreation and sport");
+      query.then(function(data) {
+        Object.keys(data).forEach(function(city) {
+          data[city] = Math.round(data[city] * weight);
+        });
+        finished.resolve(data);
+      });
+      return finished.promise;
     },
 
-    housingCostAffinity: function(target) {
-      return baseMetrics.affinity(nhs, "Shelter costs", "  Average monthly shelter costs for owned dwellings ($)", target);
+    housingcost: function(target) {
+      target = target.toLowerCase();
+      var options = {
+        '30up'   : '  Spending 30% or more of household total income on shelter costs',
+        '30down' : '  Spending less than 30% of household total income on shelter costs',
+      }
+      return baseMetrics.similarity(nhs, "Shelter costs",
+        "Total number of owner and tenant households with household total income greater than zero, in non-farm, non-reserve private dwellings by shelter-cost-to-income ratio", 
+          options[target]);
+      //return baseMetrics.affinity(nhs, "Shelter costs", "  Average monthly shelter costs for owned dwellings ($)", target);
+      
     },
 
-    incomeLevelAffinity: function(target) {
+    incomelevel: function(target) {
       return baseMetrics.affinity(nhs, "Income of individuals in 2010", "  Average income ($)", target);
     },
 
-    ageAffinity : function(target) {
+    profileage : function(target) {
       return baseMetrics.affinity(census, "Age characteristics", "Median age of the population", target);
     },
 
-    populationAffinity : function(target) {
+    populationaffinity : function(target) {
       return baseMetrics.affinity(census, "Population and dwelling counts", "Population in 2011", target);
     },
 
-    populationDensityAffinity : function(target) {
+    populationdensity : function(target) {
       return baseMetrics.affinity(census, "Population and dwelling counts", "Population density per square kilometre", target);
     },
 
-    populationGrowthAffinity : function(target) {
+    populationgrowth : function(target) {
       //Target : growth in full percent i.e. 5 = 5%;
       // WARNING: Produces Negative Values for declining cities.
       return baseMetrics.affinity(census, "Population and dwelling counts", "2006 to 2011 population change (%)", target);

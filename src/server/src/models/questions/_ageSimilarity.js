@@ -1,30 +1,43 @@
-"ageSimilarity" : 
+"ageRelation" : 
   {
     "title"   : "Age",
-    "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark",
+    "fulltext": "A great place to live means having a great group of friends, but we don't all always act our age. In what age range would your best of friends fit in?",
     "comment" : "",
-    "type"    : "range",
-    "slug"    : "ageSimilarity",
-    "range"   : {
-      "min":  18,
-      "max":  85
-    },
-    "steps": [
+    "type"    : "list",
+    "slug"    : "agerelation",
+    "category": "relationships",
+    "indicator": "age",
+    "order"   : 5,
+    "answers": [
       {
-        "top": 25,
-        "text": "A young gun."
+        "option": -10,
+        "relative": 'age',
+        "text" : "Much younger then I am",
+        "caption": "My friends a quite a bit younger than me."
       },
       {
-        "top": 45,
-        "text"   : "Old enough to have all this figured out, young enough to pretend you don't"
+        "option": -5,
+        "relative": 'age',
+        "text" : "Slightly younger then I am",
+        "caption": "My friends a bit younger than me, but by usually by less than 5 years."
       },
       {
-        "top": 65,
-        "text"   : "Top of the heap.  Master of everything...or at least everything you want to."
+        "option": 0,
+        "relative": 'age',
+        "text": "My own age",
+        "caption": "When I head out, its with a group that all my own age."
       },
       {
-        "top": 85,
-        "text"   : "The golden years, maybe now everyone will give you enough time to actually get some stuff done."
+        "option": 5,
+        "relative": 'age',
+        "text" : "Slightly older then I am",
+        "caption": "In my group, I'm usually just a bit younger then everyone else."
+      },
+      {
+        "option": 10,
+        "relative": 'age',
+        "text" : "Much older then I am",
+        "caption": "I'm the baby face of this group."
       }
-    ]
+   ]
   },
