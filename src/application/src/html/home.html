@@ -28,6 +28,12 @@
  
 </div>
 <div id="quiz" ng-hide="quizResults">
+  <div id="title" ng-hide="quizResults || question">
+    <img src="img/citylove.svg" />
+    <h3>Welcome to CityLove:CODE</h3>
+        <p>We're here to find you that special match.<br />That one of a kind feeling.<br />That perfect situation.</p>
+        <p>That's right, we're going to find out which<br /> <strong class="canada-rocks">Canadian city</strong><br /> is the best most wonderful match for you*</p>
+  </div>
   <div class="topic" ng-show="question.category != ''">{{ question.category | uppercase }}</div>
   <div ng-hide="currentQuestionNumber > totalQuestions"{{ currentQuestionNumber }}/{{ totalQuestions }}</div>
   <h1 ng-show="question.title">Topic:</h1>
@@ -52,7 +58,11 @@
   <button ng-click="nextQuestion()" ng-show="currentQuestionNumber < 1" class="callout">Start the Quiz!</button> 
   <button ng-show="currentQuestionNumber <= totalQuestions && currentQuestionNumber > 0" ng-click="nextQuestion()" class="submit" ng-class="{ skip : !currentAnswer.option }">{{ currentAnswer.option ? "Submit Answer" : "Skip Question" }}</button>
   </div>
-  <div ng-hide="currentQuestionNumber <= totalQuestions">
-    All Done!
+  <div ng-hide="quizResults || question">
+  <p class="disclaimer">*Results not proven, based upon pseudo-statistical compatibility. No accuracy implied or stated.
+   For entertainment purposes only.</p>
+  <p class="disclaimer">Really...don't trust your life to this website...or any other on for that matter.</p>
   </div>
+
+
 </div>

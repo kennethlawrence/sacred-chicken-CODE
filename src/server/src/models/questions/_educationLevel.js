@@ -26,7 +26,7 @@
       },
       {
         "option"  : "college",
-        "caption"  : "Learn the skills you really need fast, and stay focused on whats in my future.",
+        "caption"  : "Learn the skills I really need, fast, and stay focused on whats in my future.",
         "text" : "College Diploma"
       },
       {
