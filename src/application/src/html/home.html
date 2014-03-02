@@ -1,4 +1,48 @@
+<div id="results" ng-show="quizResults">
+  <h2>Who LOVES you?</h2>
+  <h1>{{ quizResults[0][0] }} DOES!</h1>
+
+  <button ng-click="reset()">Restart</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th><th>City Name</th><th>Total Points</th>
+      </tr>
+    <thead>
+  <tbody>
+      <tr ng-repeat="(index, rank) in quizResults">
+        <td>{{ index + 1 }}</td>
+        <td>{{ rank[0] }}</td>
+        <td>{{ rank[1] }}</td>
+      </tr>
+  </tbody>
+  </table>
+ 
+</div>
 <div>
-  <p>This is a home page</p>
-  <p>I hope you like it</p>
+  <div class="topic">{{ question.category | uppercase }}</div>
+  <div ng-hide="currentQuestionNumber > totalQuestions"{{ currentQuestionNumber }}/{{ totalQuestions }}</div>
+  <h1>{{ question.title }}</h1>
+
+  <p>{{ question.fulltext }}</p>
+ <div ng-show="question.type == 'list'" class="button-group">
+    <ul>
+      <li ng-repeat="(index, answer) in question.answers">
+        <button ng-click="selectAnswer(index)">{{ answer.text }}</button>
+      </li>
+    </ul>
+  </div>
+  <div ng-show="question.type == 'number'" class="slider">
+    <input id="numberInput" type=number ng-model="currentAnswer.option" />
+    <numberpad numberpad-var="currentAnswer.option"></numberpad>
+  </div>
+  <div class="info">
+    {{ currentAnswer.caption }}
+  </div>
+  <button ng-click="nextQuestion()" ng-show="currentQuestionNumber < 1">Start the Quiz!</button> 
+  <button ng-show="currentQuestionNumber <= totalQuestions && currentQuestionNumber > 0" ng-click="nextQuestion()">{{ currentAnswer ? "Submit Answer" : "Next Question" }}</button>
+  <div ng-hide="currentQuestionNumber <= totalQuestions">
+    All Done!
+  </div>
 </div>

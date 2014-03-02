@@ -22,4 +22,11 @@ angular
         });
     }
 
-  ]);
+  ])
+
+  .constant('apiSettings', {
+    port: 9000,
+    address: 'localhost',
+    dataUri: '/data',
+    questionUri: '/questions'
+  });

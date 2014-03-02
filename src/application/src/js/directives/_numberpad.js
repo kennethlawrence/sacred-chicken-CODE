@@ -1,5 +1,3 @@
-angular.module('cityLove.directives', [])
-
 .directive('numberpad', 
   function(){
     return {
@@ -24,4 +22,3 @@ angular.module('cityLove.directives', [])
 
   }
 )
-;
