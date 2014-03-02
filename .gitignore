@@ -1,5 +1,6 @@
 src/application/build/
 src/application/node_modules/
+src/application/.*
 log/
 .vagrant/
 *.swp

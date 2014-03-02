@@ -37,7 +37,7 @@
       {
         "option": "other",
         "text": "Other",
-        "caption": "Clever you. Maybe you figured out how to fly, or teleport, but if no other option fits, this is it!"
+        "caption": "Sometimes I teleport, just kiding, no other option fits, so this is it!"
       }
     ]
   },

@@ -1,7 +1,7 @@
 "profileAge" :  
   {
     "title"   : "Age",
-    "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark",
+    "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark number",
     "comment" : "",
     "type"    : "number",
     "slug"    : "profileage",

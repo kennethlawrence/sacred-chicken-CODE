@@ -12,12 +12,12 @@
       {
         "option" : "married",
         "text"   : "Married",
-        "caption": "Wonderfully tangled up in matrimony.  Like two peas in a pod...two bees in a breeze...two...ummm."
+        "caption": "Wonderfully tangled up in matrimony."
       },
       {
         "option" : "single",
         "text"   : "Single",
-        "caption": "A free bird, a lone wolf, a sacred chicken?"
+        "caption": "A free bird, a lone wolf, a sacred chicken."
       }
     ]
   },

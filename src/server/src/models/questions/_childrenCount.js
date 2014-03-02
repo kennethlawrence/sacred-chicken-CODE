@@ -11,13 +11,13 @@
     "answers" : [
       {
         "option" : "0",
-        "text"   : "None",
+        "text"   : "Nope",
         "caption": "Just Not my thing."
       },
       {
         "option" : "1",
         "text"   : "Just One",
-        "caption": "Having someone to call our own just feels right."
+        "caption": "Having one to call our own just feels right."
       },
       {
         "option": "2",

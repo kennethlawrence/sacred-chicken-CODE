@@ -3,7 +3,7 @@ var allQuestions = {
 "profileAge" :  
   {
     "title"   : "Age",
-    "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark",
+    "fulltext": "Approximately, How old might you be? No worries, we're just looking for a ballpark number",
     "comment" : "",
     "type"    : "number",
     "slug"    : "profileage",
@@ -36,7 +36,7 @@ var allQuestions = {
 
 "ageRelation" : 
   {
-    "title"   : "Age",
+    "title"   : "Friendship Age",
     "fulltext": "A great place to live means having a great group of friends, but we don't all always act our age. In what age range would your best of friends fit in?",
     "comment" : "",
     "type"    : "list",
@@ -61,7 +61,7 @@ var allQuestions = {
         "option": 0,
         "relative": 'age',
         "text": "My own age",
-        "caption": "When I head out, its with a group that all my own age."
+        "caption": "When I head out, its with a group that's all my own age."
       },
       {
         "option": 5,
@@ -73,7 +73,7 @@ var allQuestions = {
         "option": 10,
         "relative": 'age',
         "text" : "Much older then I am",
-        "caption": "I'm the baby face of this group."
+        "caption": "I'm the baby face of this group group of friends."
       }
    ]
   },
@@ -124,13 +124,13 @@ var allQuestions = {
     "answers" : [
       {
         "option" : "0",
-        "text"   : "None",
+        "text"   : "Nope",
         "caption": "Just Not my thing."
       },
       {
         "option" : "1",
         "text"   : "Just One",
-        "caption": "Having someone to call our own just feels right."
+        "caption": "Having one to call our own just feels right."
       },
       {
         "option": "2",
@@ -193,42 +193,42 @@ var allQuestions = {
       {
         "option": "education",
         "text": "Education",
-        "caption":   "Learning to teach, or learning how to learn I suppose."
+        "caption":   "Learning to teach, or learning how to learn."
       },
       {
         "option": "arts",
         "text": "Arts",
-        "caption": "Visual and performing arts, and communications technologies.  So much excitement."
+        "caption": "Visual and performing arts, so much excitement."
       },
       {
         "option": "humanities",
         "text": "Humanities",
-        "caption": "Studying the deep a facinating world of the ever so mysterious humans"
+        "caption": "Studying the deep a facinating world of the ever so mysterious humans."
       },
       {
         "option": "socialstudies",
         "text": "Socal Sciences & Law",
-        "caption": "Social and behavioural sciences and Law. Find out why people do the things they do...and the things they shouldn't"
+        "caption": "Finding out why people do the things they do, and the things they shouldn't"
       },
       {
         "option": "business",
         "text": "Business & Management",
-        "caption":   "Business, management, and public administration. Somebody needs to keep this world organized, and you'd be awesome at it."
+        "caption":   "Somebody needs to keep this world organized, and I'd be awesome at it."
       },
       {
         "option": "physed",
         "text": "Physical and Life Sciences",
-        "caption": "The human body, capable of so much if you just know how to use the darn thing"
+        "caption": "The human body, capable of so much if you just know how to use the darn thing."
       },
       {
         "option": "math",
         "text": "Mathematics & Computer Sciences",
-        "caption": "Mathmatics, information, and computers. Its all 1's and 0's here...unless its in hex...then its not."
+        "caption": "Mathmatics, information, and computers. Its all 1's and 0's here, unless its in hex...then its isn't."
       },
       {
         "option": "engineering",
         "text": "Engineering & Architecture",
-        "caption": "Build up, build out, build it better. You've got the skills to keep humanity moving forward, and to keep the roof from caving in."
+        "caption": "Build up, build out, build it better. Focused on the skills that keep humanity moving forward."
       },
       {
         "option": "agriculture",
@@ -238,17 +238,17 @@ var allQuestions = {
       {
         "option": "health", 
         "text": "Health",
-        "caption": "You've got the wherewithal to patch people up when we're falling apart.  Hands on helping, its a good way to be."
+        "caption": "Patching people up when they're falling apart.  Hands on helping, its a good way to be."
       },
       {
         "option": "protective", 
         "text": "Personal & Protective Services",
-        "caption": "Keeping a sharp eye on life, keeping systems orderly, or running in when everyone else is running away. You can't teach breavery, but you can learn what to do with it."
+        "caption": "Keeping a sharp eye on the world, and keeping things orderly."
       },
       {
         "option": "other",
         "text": "Other Education",
-        "caption": "There's so much to learn out there, we can't list it all, but if you've got your eye on some learning we didn't mention, this is for you."
+        "caption": "There's so much to learn out there, what I'm looking at is so awesome isn't even on this list."
       }
     ]
 },
@@ -271,28 +271,28 @@ var allQuestions = {
       },
       {
         "option"  : "highschool",
-        "comment" : "Highschool was the best school.  Learned everything I need, and took it from there.",
+        "caption" : "Highschool was the best school.  Learned everything I need, and took it from there.",
         "text"    : "Highschool"
       },
       {
         "option"  : "apprenticeship",
-        "comment" : "I take the full hands on approach. On the job training, and learning as you go suits me best",
+        "caption" : "I take the full hands on approach. On the job training, and learning as you go suits me best.",
         "text"    : "Apprenticeship"
       },
       {
         "option"  : "college",
-        "comment"  : "Learn the skills you really need fast, and stay focus on whats in your future",
+        "caption"  : "Learn the skills you really need fast, and stay focused on whats in my future.",
         "text" : "College Diploma"
       },
       {
         "option"  : "bachelor",
-        "comment" : "The University lifestyle, soaking up the classes at high level of learning helps define who I am and exposes me to so much more",
+        "caption" : "The University lifestyle for me.  Learning helps define who I am and exposes me to so much more.",
         "text" : "Bachelor Degree"
       },
       {
         "option"  : "masters",
-        "comment" : "Masters and up for me.  With so much out there to learn, I try to take it all in.  Academia is the life for me",
-        "text"    : "Masters Degree & UP"
+        "caption" : "A Masters or more.  With so much out there to learn, I try to take it all in.  Academia is the life for me",
+        "text"    : "Masters Degree & Up"
       }
     ]
 },
@@ -324,7 +324,7 @@ var allQuestions = {
 "gender":
   {
     "title": "Gender",
-    "fulltext": "Let's get things rolling shall we. First things first...Do you identify yourself as Male or Female?",
+    "fulltext": "First things first, do you identify yourself as Male or Female?",
     "comment" : "",
     "type"    : "list",
     "slug"    : "",
@@ -335,12 +335,12 @@ var allQuestions = {
       {
         "option" : "male",
         "text"   : "Male",
-        "caption"   : "Men...Bros...Dudes...Bastions of all masculinity, ruggedness, and bro-mance."
+        "caption"   : "I consider myself masculine."
       },
       {
         "option" : "female",
         "text"   : "Female",
-        "caption": "The wonderful and the mysterious Females."
+        "caption": "I tend toward femininity."
       }
     ]
   },
@@ -442,12 +442,12 @@ var allQuestions = {
       {
         "option" : "married",
         "text"   : "Married",
-        "caption": "Wonderfully tangled up in matrimony.  Like two peas in a pod...two bees in a breeze...two...ummm."
+        "caption": "Wonderfully tangled up in matrimony."
       },
       {
         "option" : "single",
         "text"   : "Single",
-        "caption": "A free bird, a lone wolf, a sacred chicken?"
+        "caption": "A free bird, a lone wolf, a sacred chicken."
       }
     ]
   },
@@ -509,47 +509,47 @@ var allQuestions = {
       {
         "option": "buddhist",
         "text"  : "Buddhist",
-        "caption": ""
+        "caption": "Buddhist"
       },
       {
         "option": "christian",
         "text"  : "Christian",
-        "caption":  ""
+        "caption":  "Christian"
       },
       { 
         "option": "hindu",
         "text"  : "Hindu",
-        "caption": ""
+        "caption": "Hindu"
       },
       {
        "option" : "jewish",
        "text"   : "Jewish",
-       "caption" : ""
+       "caption" : "Jewish"
       },
       {
         "option": "muslim",
         "text"  : "Muslim",
-        "caption": ""
+        "caption": "Muslim"
       },
       {
         "option": "sikh",
         "text":   "Sikh",
-        "caption": ""
+        "caption": "Sikh"
       },
       {
         "option": "traditional",
         "text"  : "Traditional (Aboriginal) Spirituality",
-        "caption": ""
+        "caption": "Traditional (Aboriginal) Spirituality"
       },
       {
         "option": "other",
-        "text": "Other religions, not yet mentioned",
-        "caption": ""
+        "text": "Other religions",
+        "caption": "Other religion, not listed here."
       },
       {
         "option": "none",
         "text":    "No religious affiliation",
-        "caption": ""
+        "caption": "No religious affiliation"
       }
     ]
   },
@@ -593,7 +593,7 @@ var allQuestions = {
       {
         "option": "other",
         "text": "Other",
-        "caption": "Clever you. Maybe you figured out how to fly, or teleport, but if no other option fits, this is it!"
+        "caption": "Sometimes I teleport, just kiding, no other option fits, so this is it!"
       }
     ]
   },

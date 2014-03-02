@@ -1,28 +1,36 @@
 <div id="results" ng-show="quizResults">
-  <h2>Who LOVES you?</h2>
-  <h1>{{ quizResults[0][0] }} DOES!</h1>
+  <h2 class="lead">Who LOVES you?</h2>
+  <h1 class="special">{{ quizResults[0][0] }}</h1>
+  <h2 class="lead">Does</h2>
+  <div class="score">
+    <span>With a score of:</span>
+    <h1>{{ quizResults[0][1]}}</h1>
+  </div>
 
-  <button ng-click="reset()">Restart</button>
+  <button class="callout" ng-click="reset()">Do it Again!</button>
 
   <table>
     <thead>
       <tr>
-        <th>Rank</th><th>City Name</th><th>Total Points</th>
+        <th class="rank">Rank</th>
+        <th class="city">City Name</th>
+        <th class="points">Total Points</th>
       </tr>
     <thead>
   <tbody>
       <tr ng-repeat="(index, rank) in quizResults">
-        <td>{{ index + 1 }}</td>
-        <td>{{ rank[0] }}</td>
-        <td>{{ rank[1] }}</td>
+        <td class="rank">{{ index + 1 }}</td>
+        <td class="city">{{ rank[0] }}</td>
+        <td class="points">{{ rank[1] }}</td>
       </tr>
   </tbody>
   </table>
  
 </div>
-<div>
-  <div class="topic">{{ question.category | uppercase }}</div>
+<div id="quiz" ng-hide="quizResults">
+  <div class="topic" ng-show="question.category != ''">{{ question.category | uppercase }}</div>
   <div ng-hide="currentQuestionNumber > totalQuestions"{{ currentQuestionNumber }}/{{ totalQuestions }}</div>
+  <h1 ng-show="question.title">Topic:</h1>
   <h1>{{ question.title }}</h1>
 
   <p>{{ question.fulltext }}</p>
@@ -40,8 +48,10 @@
   <div class="info">
     {{ currentAnswer.caption }}
   </div>
-  <button ng-click="nextQuestion()" ng-show="currentQuestionNumber < 1">Start the Quiz!</button> 
-  <button ng-show="currentQuestionNumber <= totalQuestions && currentQuestionNumber > 0" ng-click="nextQuestion()">{{ currentAnswer ? "Submit Answer" : "Next Question" }}</button>
+  <div class="submit">
+  <button ng-click="nextQuestion()" ng-show="currentQuestionNumber < 1" class="callout">Start the Quiz!</button> 
+  <button ng-show="currentQuestionNumber <= totalQuestions && currentQuestionNumber > 0" ng-click="nextQuestion()" class="submit" ng-class="{ skip : !currentAnswer.option }">{{ currentAnswer.option ? "Submit Answer" : "Skip Question" }}</button>
+  </div>
   <div ng-hide="currentQuestionNumber <= totalQuestions">
     All Done!
   </div>

@@ -12,47 +12,47 @@
       {
         "option": "buddhist",
         "text"  : "Buddhist",
-        "caption": ""
+        "caption": "Buddhist"
       },
       {
         "option": "christian",
         "text"  : "Christian",
-        "caption":  ""
+        "caption":  "Christian"
       },
       { 
         "option": "hindu",
         "text"  : "Hindu",
-        "caption": ""
+        "caption": "Hindu"
       },
       {
        "option" : "jewish",
        "text"   : "Jewish",
-       "caption" : ""
+       "caption" : "Jewish"
       },
       {
         "option": "muslim",
         "text"  : "Muslim",
-        "caption": ""
+        "caption": "Muslim"
       },
       {
         "option": "sikh",
         "text":   "Sikh",
-        "caption": ""
+        "caption": "Sikh"
       },
       {
         "option": "traditional",
         "text"  : "Traditional (Aboriginal) Spirituality",
-        "caption": ""
+        "caption": "Traditional (Aboriginal) Spirituality"
       },
       {
         "option": "other",
-        "text": "Other religions, not yet mentioned",
-        "caption": ""
+        "text": "Other religions",
+        "caption": "Other religion, not listed here."
       },
       {
         "option": "none",
         "text":    "No religious affiliation",
-        "caption": ""
+        "caption": "No religious affiliation"
       }
     ]
   },
