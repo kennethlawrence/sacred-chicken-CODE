@@ -97,10 +97,8 @@ var percentageOfBaselineScore = function(source, topic, baseline, stat, bias) {
           focusResult = data;
         });
 
-        console.log(source, topic, baseline, stat, bias);
         Q.all([baselineQuery, focusQuery]).then(function() {
           Object.keys(focusResult).forEach(function(index) {
-             console.log(index, focusResult[index], baselineResult[index]);
              resultScores[index] = (focusResult[index] / baselineResult[index] * 100) / 100;
              if(resultScores[index] > max) max = resultScores[index];
           });
@@ -122,11 +120,9 @@ var baseMetrics  = {
       var finished = Q.defer(),
         scores = {};
 
-      console.log(source, topic, stat, bias);
       query = getAllData(source, topic, stat, bias);
       query.then(function(data){
         Object.keys(data).forEach(function(city) {
-          console.log(city, data[city], target)
           if(target === 0)
             scores[city] = parseInt((target + 1) / (data[city] + 1) * 100)
           else
@@ -152,7 +148,16 @@ var baseMetrics  = {
     }
 }
 
-
+var route = function(request, response){
+  var metric = request.params.metric;
+  if(metric) {
+    //console.log("metric", request.query.target, request.query.bias);
+    metrics[metric](request.query.target, request.query.bias)
+      .then(function(data) {
+        response.json(data);
+      });
+  }
+}
 
 var metrics = {
     ageSimilarity : function(target, bias) {
@@ -190,7 +195,6 @@ var metrics = {
         'other'       : '  Other religions',
         'none'        : '  No religious affiliation'
       }
-      console.log(options[target]);
       return baseMetrics.similarity(nhs, "Religion", "Total population in private households by religion", options[target], bias);
     },
 
@@ -321,9 +325,7 @@ var metrics = {
       // WARNING: Produces Negative Values for declining cities.
       return baseMetrics.affinity(census, "Population and dwelling counts", "2006 to 2011 population change (%)", target);
     }
-
-
 }
 
-module.exports.getSingleRow = getSingleRow;
 module.exports.metrics = metrics;
+module.exports.route = route;
