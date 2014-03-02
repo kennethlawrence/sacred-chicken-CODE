@@ -59,10 +59,6 @@
   <button ng-show="currentQuestionNumber <= totalQuestions && currentQuestionNumber > 0" ng-click="nextQuestion()" class="submit" ng-class="{ skip : !currentAnswer.option }">{{ currentAnswer.option ? "Submit Answer" : "Skip Question" }}</button>
   </div>
   <div ng-hide="quizResults || question">
-  <p class="disclaimer">*Results not proven, based upon pseudo-statistical compatibility. No accuracy implied or stated.
-   For entertainment purposes only.</p>
-  <p class="disclaimer">Really...don't trust your life to this website...or any other on for that matter.</p>
+    <p class="disclaimer">*Results not prove. Please see <a href="/about">Disclaimer</a></p>
   </div>
-
-
 </div>

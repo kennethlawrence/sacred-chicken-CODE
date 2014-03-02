@@ -9,6 +9,9 @@ body {
   min-height: 100%;
   padding-bottom: 2em; }
 
+a, a:active, a:visited {
+  color: #111; }
+
 header {
   position: fixed;
   top: 0;
@@ -42,19 +45,20 @@ footer {
   max-width: 700px;
   margin: 0 auto; }
 
-#quiz, #results {
-  margin-top: 4em;
+#quiz, #results, #about {
+  background-color: #fff;
   padding: 1em 2em 1em 2em;
   -webkit-box-shadow: 0px 3px 3px 10px #333;
   -moz-box-shadow: 0px 3px 3px 10px #333;
   box-shadow: 0px 3px 3px 5px #ddd;
-  max-width: 320px; }
-  #quiz h1, #results h1 {
+  max-width: 320px;
+  margin: 4em auto; }
+  #quiz h1, #results h1, #about h1 {
     line-height: 0.9em;
     overflow: visible;
     margin-bottom: 0;
     margin-top: 0; }
-  #quiz .topic, #results .topic {
+  #quiz .topic, #results .topic, #about .topic {
     display: block;
     text-align: right;
     background-color: #eee;
@@ -63,18 +67,18 @@ footer {
     -moz-border-radius: 3px;
     border-radius: 3px;
     margin-bottom: 0.5em; }
-  #quiz ul, #results ul {
+  #quiz ul, #results ul, #about ul {
     list-style-type: none;
     padding: 0; }
-  #quiz .button-group, #results .button-group {
+  #quiz .button-group, #results .button-group, #about .button-group {
     display: table;
     padding: 0; }
-    #quiz .button-group li, #results .button-group li {
+    #quiz .button-group li, #results .button-group li, #about .button-group li {
       display: table-row; }
-    #quiz .button-group button, #results .button-group button {
+    #quiz .button-group button, #results .button-group button, #about .button-group button {
       display: table-cell;
       width: 100%; }
-  #quiz button, #results button {
+  #quiz button, #results button, #about button {
     border: 1px solid #fff;
     font-size: 1em;
     margin: 0.5em;
@@ -86,25 +90,25 @@ footer {
     -moz-border-radius: 8px;
     border-radius: 8px;
     padding: 0.5em; }
-  #quiz .submit, #results .submit {
+  #quiz .submit, #results .submit, #about .submit {
     border-top: 1px solid #ddd; }
-  #quiz .callout, #results .callout {
+  #quiz .callout, #results .callout, #about .callout {
     font-size: 2.6em; }
-    #quiz .callout:hover, #results .callout:hover {
+    #quiz .callout:hover, #results .callout:hover, #about .callout:hover {
       border: none;
       -webkit-box-shadow: 0px 0px 5px 5px #333;
       -moz-box-shadow: 0px 0px 0px 5px #333;
       box-shadow: 0px 0px 15px 5px #ffb5a6; }
-  #quiz .skip, #results .skip {
+  #quiz .skip, #results .skip, #about .skip {
     background-color: #ff9f8c; }
-  #quiz .lead, #quiz .score, #results .lead, #results .score {
+  #quiz .lead, #quiz .score, #results .lead, #results .score, #about .lead, #about .score {
     display: block;
     font-size: 1.3em;
     margin: 0.5em auto;
     text-align: center; }
-  #quiz .score h1, #results .score h1 {
+  #quiz .score h1, #results .score h1, #about .score h1 {
     font-size: 4em; }
-  #quiz .special, #results .special {
+  #quiz .special, #results .special, #about .special {
     margin: 0.5 -0.5;
     font-size: 2.5em;
     width: 100%;

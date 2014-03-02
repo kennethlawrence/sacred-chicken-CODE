@@ -1,5 +1,12 @@
 angular.module('cityLove.controllers', ['cityLove.services'])
 
+.controller('resultsController', ['$scope', 
+  function($scope, matchMakerService) {
+
+    console.log($scope.results);
+  }
+])
+
 .controller('homeController', ['$scope', 'questionService', 'profileService', 'matchMakerService', '$location',
   function($scope, questionService, profileService, matchMakerService, $location) {
 
@@ -57,14 +64,6 @@ angular.module('cityLove.controllers', ['cityLove.services'])
     $scope.selectAnswer = function(index) {
       $scope.currentAnswer = $scope.question.answers[index];
     };
-  }
-])
-
-.controller('resultsController', ['$scope', 'matchMakerService',
-  function($scope, matchMakerService) {
-
-    $scope.results = matchMakerService.getLatestResults();
-    console.log($scope.results);
   }
 ])
 ;

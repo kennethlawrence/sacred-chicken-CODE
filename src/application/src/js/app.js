@@ -14,7 +14,6 @@ angular
       $routeProvider
         .when('/about', {
           templateUrl: 'html/about.html'
-          //controller: 'aboutController'
         })
         .otherwise({
           templateUrl: 'html/home.html',
